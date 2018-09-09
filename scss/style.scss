@@ -1,0 +1,80 @@
+*{
+  box-sizing: border-box;
+}
+
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+
+.board{
+	position: relative;
+	width: 95vw;
+	height: 95vw;
+	max-width: 400px;
+	max-height: 400px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 500px){
+	.board{
+		margin-top: calc(50vh - 47.5vw);
+	}
+}
+
+.box{
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	box-shadow: 0 0 2px 2px /*rgb(255, 253, 146)*/ black;  
+	font-size: calc(3px + 1vmin);
+	font-family: "comic sans ms";
+	transition: background-color 1s;
+	overflow: hidden;
+}
+
+.selected{
+	background-color: rgb(133, 255, 255);
+}
+
+.secondRow{
+	top: 20%
+}
+.thirdRow{
+	top: 40%;
+}
+.fourthRow{
+	top: 60%;
+}
+.fifthRow{
+	top: 80%;
+}
+
+@for $i from 1 through 5 {
+	
+	.box:nth-child(#{$i}){
+		left: calc(20% * (#{$i} - 1));
+	}
+	
+}
+
+.center{
+	height: 130%;
+	width: 150%;
+	position: absolute;
+	left: -30%;
+	top: -15%;
+	animation: sway 2s infinite;
+}
+
+@keyframes sway{
+	0%{
+		transform: rotateZ(-3deg);
+	}
+	50%{
+		transform: rotateZ(3deg);
+	}
+	100%{
+		transform: rotateZ(-3deg);
+	}
+}

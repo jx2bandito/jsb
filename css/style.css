@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box; }
+
+:focus {
+  outline: none; }
+
+::-moz-focus-inner {
+  border: 0; }
+
+.board {
+  position: relative;
+  width: 95vw;
+  height: 95vw;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto; }
+
+@media screen and (max-width: 500px) {
+  .board {
+    margin-top: calc(50vh - 47.5vw); } }
+.box {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  box-shadow: 0 0 2px 2px black;
+  font-size: calc(3px + 1vmin);
+  font-family: "comic sans ms";
+  transition: background-color 1s;
+  overflow: hidden; }
+
+.selected {
+  background-color: #85ffff; }
+
+.secondRow {
+  top: 20%; }
+
+.thirdRow {
+  top: 40%; }
+
+.fourthRow {
+  top: 60%; }
+
+.fifthRow {
+  top: 80%; }
+
+.box:nth-child(1) {
+  left: calc(20% * (1 - 1)); }
+
+.box:nth-child(2) {
+  left: calc(20% * (2 - 1)); }
+
+.box:nth-child(3) {
+  left: calc(20% * (3 - 1)); }
+
+.box:nth-child(4) {
+  left: calc(20% * (4 - 1)); }
+
+.box:nth-child(5) {
+  left: calc(20% * (5 - 1)); }
+
+.center {
+  height: 130%;
+  width: 150%;
+  position: absolute;
+  left: -30%;
+  top: -15%;
+  animation: sway 2s infinite; }
+
+@keyframes sway {
+  0% {
+    transform: rotateZ(-3deg); }
+  50% {
+    transform: rotateZ(3deg); }
+  100% {
+    transform: rotateZ(-3deg); } }
+
+/*# sourceMappingURL=style.css.map */
